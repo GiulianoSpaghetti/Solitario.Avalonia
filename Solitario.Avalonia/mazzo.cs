@@ -32,8 +32,6 @@ namespace Solitario.Avalonia
         public ushort getNumeroCarte() { return numeroCarte; }
         public ushort getCarta()
         {
-            if (numeroCarte > 10)
-                throw new IndexOutOfRangeException();
             ushort c = carte[--numeroCarte];
             return c;
         }
