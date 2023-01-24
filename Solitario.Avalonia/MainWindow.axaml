@@ -1,0 +1,95 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Solitario.Avalonia.MainWindow"
+        Title="Solitario.Avalonia">
+	<Grid>
+		<Grid x:Name="Applicazione">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Image x:Name="carta0" Grid.Row="0" Grid.Column="0" IsVisible="false"/>
+			<Image x:Name="carta1" Grid.Row="0" Grid.Column="1" IsVisible="false"/>
+			<Image x:Name="carta2" Grid.Row="0" Grid.Column="2" IsVisible="false"/>
+			<Image x:Name="carta3" Grid.Row="0" Grid.Column="3" IsVisible="false"/>
+			<Image x:Name="carta4" Grid.Row="0" Grid.Column="4" IsVisible="false"/>
+			<Image x:Name="carta5" Grid.Row="0" Grid.Column="5" IsVisible="false"/>
+			<Image x:Name="carta6" Grid.Row="0" Grid.Column="6" IsVisible="false"/>
+			<Image x:Name="carta7" Grid.Row="0" Grid.Column="7" IsVisible="false"/>
+			<Image x:Name="carta8" Grid.Row="0" Grid.Column="8" IsVisible="false"/>
+			<Image x:Name="carta9" Grid.Row="0" Grid.Column="9" IsVisible="false"/>
+			<Image x:Name="carta10" Grid.Row="1" Grid.Column="0" IsVisible="false"/>
+			<Image x:Name="carta11" Grid.Row="1" Grid.Column="1" IsVisible="false"/>
+			<Image x:Name="carta12" Grid.Row="1" Grid.Column="2" IsVisible="false"/>
+			<Image x:Name="carta13" Grid.Row="1" Grid.Column="3" IsVisible="false"/>
+			<Image x:Name="carta14" Grid.Row="1" Grid.Column="4" IsVisible="false"/>
+			<Image x:Name="carta15" Grid.Row="1" Grid.Column="5" IsVisible="false"/>
+			<Image x:Name="carta16" Grid.Row="1" Grid.Column="6" IsVisible="false"/>
+			<Image x:Name="carta17" Grid.Row="1" Grid.Column="7" IsVisible="false"/>
+			<Image x:Name="carta18" Grid.Row="1" Grid.Column="8" IsVisible="false"/>
+			<Image x:Name="carta19" Grid.Row="1" Grid.Column="9" IsVisible="false"/>
+			<Image x:Name="carta20" Grid.Row="2" Grid.Column="0" IsVisible="false"/>
+			<Image x:Name="carta21" Grid.Row="2" Grid.Column="1" IsVisible="false"/>
+			<Image x:Name="carta22" Grid.Row="2" Grid.Column="2" IsVisible="false"/>
+			<Image x:Name="carta23" Grid.Row="2" Grid.Column="3" IsVisible="false"/>
+			<Image x:Name="carta24" Grid.Row="2" Grid.Column="4" IsVisible="false"/>
+			<Image x:Name="carta25" Grid.Row="2" Grid.Column="5" IsVisible="false"/>
+			<Image x:Name="carta26" Grid.Row="2" Grid.Column="6" IsVisible="false"/>
+			<Image x:Name="carta27" Grid.Row="2" Grid.Column="7" IsVisible="false"/>
+			<Image x:Name="carta28" Grid.Row="2" Grid.Column="8" IsVisible="false"/>
+			<Image x:Name="carta29" Grid.Row="2" Grid.Column="9" IsVisible="false"/>
+			<Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">Sposta l'ultima carta della riga</Label>
+			<TextBox x:Name="Inizio" Grid.Row="3" Grid.Column="3"></TextBox>
+			<Label Grid.Row="3" Grid.Column="4"> a </Label>
+			<TextBox x:Name="Fine" Grid.Row="3" Grid.Column="5"></TextBox>
+			<Button Click="OnOk_Click" Grid.Row="3" Grid.Column="6">Ok</Button>
+			<Label Name="Risultato" Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="2" />
+			<Button Click="OnInfo_Click" Grid.Row="4" Grid.Column="1">Informazioni</Button>
+		</Grid>
+		<Grid x:Name="greeting" IsVisible="false">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Label x:Name="msgfine" Grid.Row="0"></Label>
+			<Button Click="OnFine_Click" Grid.Row="4" Grid.Column="1">Ok</Button>
+		</Grid>
+
+		<Grid x:Name="Info" IsVisible="false">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Label Grid.Row="0">Autore Giulio Sorrentino</Label>
+			<Label Grid.Row="1">Solitario v0.1</Label>
+			<Label Grid.Row="2">Semplice solitaro che permette di spostare le carte solo sulle carte più grandi</Label>
+			<Label Grid.Row="3">Licenza: GPL v3 o, secono la tua opinione, qualsiasi versione successiva</Label>
+			<Label Grid.Row="4">https://github.com/numerunix/solitario.avalonia</Label>
+			<Button Click="OnApp_Click" Grid.Row="4" Grid.Column="1">Applicazione</Button>
+		</Grid>
+	</Grid>
+</Window>
