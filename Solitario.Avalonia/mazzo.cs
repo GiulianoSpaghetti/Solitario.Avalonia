@@ -18,14 +18,14 @@ namespace Solitario.Avalonia
         private string nome;
         private void mischia()
         {
-            for (numeroCarte = 0; numeroCarte <10; numeroCarte++)
+            for (numeroCarte = 0; numeroCarte <9; numeroCarte++)
                 carte[numeroCarte] = elaboratore.getCarta();
         }
 
         public mazzo(elaboratoreCarte e)
         {
             elaboratore = e;
-            carte = new ushort[10];
+            carte = new ushort[9];
             nome = "Napoletano";
             mischia();
         }

@@ -101,9 +101,16 @@ namespace Solitario.Avalonia
                 case 1: b = j; break;
                 case 2: b = k; break;
             }
+            carta c;
             if (b < 10)
             {
-                carta c = vettore[inizio * 10 + a];
+                try
+                {
+                   c = vettore[inizio * 10 + a];
+                } catch(System.IndexOutOfRangeException ex)
+                {
+                    Risultato.Content = "La riga di inizio è vuota"; Risultato.Foreground = Brushes.Red; return;
+                }
                 carta c1 = vettore[fine * 10 + b];
                 if (c.CompareTo(c1) == -1) { Risultato.Content = "Impossibile effettuare l'operazione"; Risultato.Foreground = Brushes.Red; return; }
             } 
@@ -126,7 +133,7 @@ namespace Solitario.Avalonia
                 case 2: k = b; break;
             }
             mosse++;
-            if (b==10) { 
+            if (b==9) { 
                 Applicazione.IsVisible=false;
                 greeting.IsVisible = true;
                 msgfine.Content = "Il solitario è finito, lo hai completato in " + mosse + "mosse.";

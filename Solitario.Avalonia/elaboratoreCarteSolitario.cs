@@ -18,13 +18,14 @@ namespace Solitario.Avalonia
         public static Random r = new Random();
         public elaboratoreCarteSolitario()
         {
-            doppione = new bool[40];
-            for (int i = 0; i < 40; i++)
+            doppione = new bool[10];
+            for (int i = 1; i < 9; i++)
                 doppione[i] = false;
+            doppione[0] = true;
         }
         public ushort getCarta()
         {
-            ushort fine = (ushort)(r.Next(0, 9) % numeroCarte),
+            ushort fine = (ushort)(r.Next(1, 9) % numeroCarte),
             carta = (ushort)((fine + 1) % numeroCarte);
             while (doppione[carta] && carta != fine)
                 carta = (ushort)((carta + 1) % numeroCarte);
