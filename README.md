@@ -11,6 +11,10 @@ Installate la nuova chiave del repository tramite il comando sudo apt-key adv --
 Poi inserite nel file /etc/apt/sources.list la riga deb http://numeronesoft.ddns.net/repos/apt/debian bullseye main
 
 Infine fate apt update ed apt install solitario.avalonia
+
+# Screenshots
+<img width="1431" alt="2023-01-24 (1)" src="https://user-images.githubusercontent.com/49764967/214418666-e3b73f80-d9f7-472f-96f5-9205c7a0ad00.png">
+
                                                                                                                                                   
 # Bibliografia
 https://github.com/AvaloniaUI/Avalonia/issues/3078
