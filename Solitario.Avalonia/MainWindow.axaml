@@ -113,13 +113,14 @@
 					<RowDefinition/>
 					<RowDefinition/>
 					<RowDefinition/>
+					<RowDefinition/>
 				</Grid.RowDefinitions>
 				<Label Grid.Row="0">Autore Giulio Sorrentino</Label>
-				<Label Grid.Row="1">Solitario v</Label>
+				<Label Grid.Row="1">Solitario v 1.1</Label>
 				<Label Grid.Row="2">Semplice solitaro che permette di spostare le carte solo sulle carte più grandi</Label>
-				<Label Grid.Row="3">Licenza: GPL v3 o, secono la tua opinione, qualsiasi versione successiva</Label>
-				<Label Grid.Row="4">https://github.com/numerunix/solitario.avalonia</Label>
-				<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="4" />
+				<Label Grid.Row="3">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</Label>
+				<Button Grid.Row="4" Click="OnSito_Click">Maggiori Informazioni</Button>
+				<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="5" />
 			</Grid>
 		</Grid>
 	</Window.Content>

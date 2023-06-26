@@ -116,10 +116,10 @@ namespace Solitario.Avalonia
             {
                 Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("EVuota")}"; Risultato.Foreground = Brushes.Red; return;
             }
-            carta c1 = vettore[fine * 10 + b];
+            carta c1 = vettore[fine * 10 + ++b];
             if (c.CompareTo(c1) == -1) { Risultato.Content = $"{this.FindResource("OperazioneNonValida")}"; Risultato.Foreground = Brushes.Red; return; }
             Image img = this.Find<Image>("carta" + (inizio * 10 + a));
-                Image img1 = this.Find<Image>("carta" + (fine * 10 + ++b));
+                Image img1 = this.Find<Image>("carta" + (fine * 10 + b));
                 vettore[fine * 10 + b] = vettore[inizio * 10 + a];
                 vettore[inizio * 10 + a] = null;
                 img1.Source = img.Source;
@@ -220,12 +220,20 @@ namespace Solitario.Avalonia
             greeting.IsVisible = false;
             Applicazione.IsVisible = true;
         }
-
+        private void OnSito_Click(object sender, RoutedEventArgs e)
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = "https://github.com/numerunix/solitario.avalonia",
+                UseShellExecute = true
+            };
+            Process.Start(psi);
+        }
         private void greetingsShare_Click(object sender, RoutedEventArgs e)
         {
             var psi = new ProcessStartInfo
             {
-                FileName = $"https://twitter.com/intent/tweet?text=Ho%20completato%20il%20solitario%20di%20numerone%20in%20{mosse}%20mosse&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fsolitario.Avalonia",
+                FileName = $"https://twitter.com/intent/tweet?text=Ho%20completato%20il%20solitario%20in%20avalonia%20di%20numerone%20in%20{mosse}%20mosse&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fsolitario.Avalonia",
                 UseShellExecute = true
             };
             condividi.IsEnabled = false;
