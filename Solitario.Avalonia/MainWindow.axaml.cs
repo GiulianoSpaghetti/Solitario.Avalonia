@@ -116,10 +116,14 @@ namespace Solitario.Avalonia
             {
                 Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("EVuota")}"; Risultato.Foreground = Brushes.Red; return;
             }
-            carta c1 = vettore[fine * 10 + ++b];
+            carta c1 = null;
+            try
+            {
+                c1 = vettore[fine * 10 + b];
+            } catch (IndexOutOfRangeException ex) {; }
             if (c.CompareTo(c1) == -1) { Risultato.Content = $"{this.FindResource("OperazioneNonValida")}"; Risultato.Foreground = Brushes.Red; return; }
             Image img = this.Find<Image>("carta" + (inizio * 10 + a));
-                Image img1 = this.Find<Image>("carta" + (fine * 10 + b));
+                Image img1 = this.Find<Image>("carta" + (fine * 10 + ++b));
                 vettore[fine * 10 + b] = vettore[inizio * 10 + a];
                 vettore[inizio * 10 + a] = null;
                 img1.Source = img.Source;
