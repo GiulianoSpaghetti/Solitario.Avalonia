@@ -115,9 +115,9 @@
 					<RowDefinition/>
 					<RowDefinition/>
 				</Grid.RowDefinitions>
-				<Label Grid.Row="0">Autore Giulio Sorrentino</Label>
-				<Label Grid.Row="1">Solitario v 1.1</Label>
-				<Label Grid.Row="2">Semplice solitaro che permette di spostare le carte solo sulle carte più grandi</Label>
+				<Label Grid.Row="0">© Giulio Sorrentino 2023</Label>
+				<Label Grid.Row="1">La torre di babele v 1.1</Label>
+				<Label Grid.Row="2">La torre di Babele: solitario che permette di spostare le carte solo sulle carte più grandi</Label>
 				<Label Grid.Row="3">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</Label>
 				<Button Grid.Row="4" Click="OnSito_Click">Maggiori Informazioni</Button>
 				<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="5" />
