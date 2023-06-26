@@ -5,7 +5,15 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Solitario.Avalonia.MainWindow"
         Title="Solitario.Avalonia">
-	<Window.Resources>
+		<Window.Styles>
+			<Style Selector="Label">
+				<Setter Property="Foreground" Value="White" />
+			</Style>
+			<Style Selector="Button">
+				<Setter Property="Foreground" Value="White" />
+			</Style>
+		</Window.Styles>
+		<Window.Resources>
 		<ResourceDictionary>
 			<x:String x:Key="Ok">Ok</x:String>
 			<x:String x:Key="SpostaCarta">Sposta l'ultima carta della riga</x:String>
@@ -25,6 +33,8 @@
 			<x:String x:Key="OperazioneNonValida">Operazione non valida</x:String>
 			<x:String x:Key="SolitarioFinito">Il solitario è finito, lo hai completato in</x:String>
 			<x:String x:Key="VuoiFareNuovaPartita">mosse. Vuoi effettuare una nuova partita?</x:String>
+			<x:String x:Key="info">La torre di Babele: solitario che permette di spostare le carte solo sulle carte più grandi</x:String>
+			<x:String x:Key="imageinfo">L'immagine di sfondo é fatta da Giulio Sorrentino alla riserva naturale degli astroni del WWF. E' sotto licenza creative commons sharealike 4.0 international.</x:String>
 		</ResourceDictionary>
 	</Window.Resources>
 	<Window.Content>
@@ -49,6 +59,7 @@
 					<RowDefinition />
 					<RowDefinition/>
 				</Grid.RowDefinitions>
+				<Image Source="/resources/images/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="10" Stretch="Fill"/>
 				<Image x:Name="carta0" Grid.Row="0" Grid.Column="0" IsVisible="false"/>
 				<Image x:Name="carta1" Grid.Row="0" Grid.Column="1" IsVisible="false"/>
 				<Image x:Name="carta2" Grid.Row="0" Grid.Column="2" IsVisible="false"/>
@@ -100,6 +111,7 @@
 					<RowDefinition/>
 					<RowDefinition/>
 				</Grid.RowDefinitions>
+				<Image Source="/resources/images/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="3" Stretch="Fill"/>
 				<Label x:Name="msgfine" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"></Label>
 				<Button x:Name="greetingsClose" Click="OnFine_Click" Grid.Row="4" Grid.Column="1"/>
 				<Button x:Name="greetingsOk" Click="greetingsOk_Click" Grid.Row="4" Grid.Column="0" />
@@ -114,13 +126,16 @@
 					<RowDefinition/>
 					<RowDefinition/>
 					<RowDefinition/>
+					<RowDefinition />
 				</Grid.RowDefinitions>
+				<Image Source="/resources/images/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Stretch="Fill"/>
 				<Label Grid.Row="0">© Giulio Sorrentino 2023</Label>
 				<Label Grid.Row="1">La torre di babele v 1.1</Label>
-				<Label Grid.Row="2">La torre di Babele: solitario che permette di spostare le carte solo sulle carte più grandi</Label>
+				<Label Grid.Row="2" x:Name="lblinfo" />
 				<Label Grid.Row="3">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</Label>
-				<Button Grid.Row="4" Click="OnSito_Click">Maggiori Informazioni</Button>
-				<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="5" />
+				<Label Grid.Row="4" x:Name="lblimageinfo" />
+				<Button Grid.Row="5" Click="OnSito_Click">Maggiori Informazioni</Button>
+				<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="6" />
 			</Grid>
 		</Grid>
 	</Window.Content>

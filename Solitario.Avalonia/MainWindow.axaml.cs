@@ -64,6 +64,8 @@ namespace Solitario.Avalonia
             greetingsOk.Content = this.FindResource("Ok");
             condividi.Content = this.FindResource("Condividi");
             InfoApp.Content = this.FindResource("Applicazione");
+            lblinfo.Content = this.FindResource("info");
+            lblimageinfo.Content = this.FindResource("imageinfo");
         }
 
         private void OnOk_Click(object sender, RoutedEventArgs e)
