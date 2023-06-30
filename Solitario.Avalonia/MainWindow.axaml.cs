@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Platform;
@@ -15,10 +16,12 @@ namespace Solitario.Avalonia
         UInt16 i, j, k;
         private carta[] vettore;
         private ulong mosse = 0;
+        private WindowNotificationManager notification;
         public MainWindow()
         {
             int a = 0, b = 0;
             InitializeComponent();
+            notification = new WindowNotificationManager(this) { Position = NotificationPosition.BottomRight };
             vettore = new carta[30];
             elaboratoreCarteSolitario e = new elaboratoreCarteSolitario();
             mazzo m = new mazzo(e);
@@ -71,11 +74,9 @@ namespace Solitario.Avalonia
         private void OnOk_Click(object sender, RoutedEventArgs e)
         {
             UInt16 inizio, fine, a = 0, b = 0;
-            Risultato.Content = "";
-            Risultato.Foreground = Brushes.Black;
-            if (Inizio.Text == null || Inizio.Text == "") { Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("EVuota")}"; Risultato.Foreground = Brushes.Red; return; }
+            if (Inizio.Text == null || Inizio.Text == "") { notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("EVuota")}"); return; }
 
-            if (Fine.Text == null || Fine.Text == "") { Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiFine")} {this.FindResource("EVuota")}"; Risultato.Foreground = Brushes.Red; return; }
+            if (Fine.Text == null || Fine.Text == "") { notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiFine")} {this.FindResource("EVuota")}"); return; }
 
             try
             {
@@ -83,7 +84,7 @@ namespace Solitario.Avalonia
             }
             catch (FormatException ex)
             {
-                Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("NonIntera")}"; Risultato.Foreground = Brushes.Red; return;
+                notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("NonIntera")}"); return;
             }
             inizio--;
             try
@@ -92,12 +93,12 @@ namespace Solitario.Avalonia
             }
             catch (FormatException ex)
             {
-                Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiFine")} {this.FindResource("NonIntera")}"; Risultato.Foreground = Brushes.Red; return;
+                notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiFine")} {this.FindResource("NonIntera")}"); return;
             }
             fine--;
-            if (inizio > 2) { Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("NonNelRange")}"; Risultato.Foreground = Brushes.Red; return; }
-            if (fine > 2) { Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("NonNelRange")}"; Risultato.Foreground = Brushes.Red; return; }
-            if (inizio == fine) { Risultato.Content = $"{this.FindResource("LeRigheCoincidono")}"; Risultato.Foreground = Brushes.Red; return; }
+            if (inizio > 2) { notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("NonNelRange")}"); return; }
+            if (fine > 2) { notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("NonNelRange")}"); return; }
+            if (inizio == fine) { notification.Show($"{this.FindResource("LeRigheCoincidono")}"); return; }
             switch (inizio)
             {
                 case 0: a = i; break;
@@ -116,14 +117,14 @@ namespace Solitario.Avalonia
                 c = vettore[inizio * 10 + a];
             } catch (System.IndexOutOfRangeException ex)
             {
-                Risultato.Content = $"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("EVuota")}"; Risultato.Foreground = Brushes.Red; return;
+                notification.Show($"{this.FindResource("LaRiga")} {this.FindResource("DiInizio")} {this.FindResource("EVuota")}"); return;
             }
             carta c1 = null;
             try
             {
                 c1 = vettore[fine * 10 + b];
             } catch (IndexOutOfRangeException ex) {; }
-            if (c.CompareTo(c1) == -1) { Risultato.Content = $"{this.FindResource("OperazioneNonValida")}"; Risultato.Foreground = Brushes.Red; return; }
+            if (c.CompareTo(c1) == -1) { notification.Show($"{this.FindResource("OperazioneNonValida")}"); return; }
             Image img = this.Find<Image>("carta" + (inizio * 10 + a));
                 Image img1 = this.Find<Image>("carta" + (fine * 10 + ++b));
                 vettore[fine * 10 + b] = vettore[inizio * 10 + a];
