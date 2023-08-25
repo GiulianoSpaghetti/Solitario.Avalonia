@@ -29,13 +29,13 @@ namespace Solitario.Avalonia
             seme = helper.getSeme(n);
             valore = helper.getValore(n);
         }
-        public static void inizializza(ushort n, cartaHelperSolitario h, IAssetLoader asset)
+        public static void inizializza(ushort n, cartaHelperSolitario h)
         {
             for (ushort i = 0; i < n; i++)
             {
                 carte[i] = new carta(i, h);
             }
-            CaricaImmagini(n, h, asset);
+            CaricaImmagini(n, h);
         }
         public static carta getCarta(ushort quale) { return carte[quale]; }
         public ushort getSeme() { return seme; }
@@ -59,15 +59,13 @@ namespace Solitario.Avalonia
             return img;
         }
 
-        public static void CaricaImmagini(ushort n, cartaHelperSolitario helper, IAssetLoader assets)
+        public static void CaricaImmagini(ushort n, cartaHelperSolitario helper)
         {
             Stream asset;
 
             for (ushort i = 0; i < n; i++)
             {
-                asset = assets.Open(new Uri($"avares://{Assembly.GetEntryAssembly().GetName().Name}/resources/images/" + i + ".png"));
-
-                carte[i].img = new Bitmap(asset);
+                carte[i].img = new Bitmap(AssetLoader.Open(new Uri($"avares://Solitario/Assets/{i}.png")));
             }
         }
     }

@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Solitario.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:Solitario.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Solitario.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Solitario">
+	<Window.Resources>
+		<ResourceDictionary>
+			<x:String x:Key="Ok">Ok</x:String>
+			<x:String x:Key="SpostaCarta">Sposta l'ultima carta della riga</x:String>
+			<x:String x:Key="SuRiga">sull'ultima carta della riga</x:String>
+			<x:String x:Key="Informazioni">Informazioni</x:String>
+			<x:String x:Key="Annulla">Annulla</x:String>
+			<x:String x:Key="Condividi">Condividi</x:String>
+			<x:String x:Key="Applicazione">Applicazione</x:String>
+			<x:String x:Key="LaRiga">La riga di</x:String>
+			<x:String x:Key="DiInizio">inizio</x:String>
+			<x:String x:Key="DiFine">fine</x:String>
+			<x:String x:Key="NonValida">non è valida</x:String>
+			<x:String x:Key="EVuota">è vuota</x:String>
+			<x:String x:Key="NonIntera">non è intera</x:String>
+			<x:String x:Key="NonNelRange">non è nel range stabilito</x:String>
+			<x:String x:Key="LeRigheCoincidono">Le due righe coincidono</x:String>
+			<x:String x:Key="OperazioneNonValida">Operazione non valida</x:String>
+			<x:String x:Key="SolitarioFinito">Il solitario è finito, lo hai completato in</x:String>
+			<x:String x:Key="VuoiFareNuovaPartita">mosse. Vuoi effettuare una nuova partita?</x:String>
+			<x:String x:Key="info">La torre di Babele: solitario che permette di spostare le carte solo sulle carte più grandi</x:String>
+			<x:String x:Key="imageinfo">L'immagine di sfondo é fatta da Giulio Sorrentino alla riserva naturale degli astroni del WWF. E' sotto licenza creative commons sharealike 4.0 international.</x:String>
+		</ResourceDictionary>
+	</Window.Resources>
+        <views:MainView />
+</Window>
