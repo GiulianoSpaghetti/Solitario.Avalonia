@@ -63,12 +63,12 @@
 			<Image x:Name="carta27" Grid.Row="2" Grid.Column="7" IsVisible="false"/>
 			<Image x:Name="carta28" Grid.Row="2" Grid.Column="8" IsVisible="false"/>
 			<Image x:Name="carta29" Grid.Row="2" Grid.Column="9" IsVisible="false"/>
-			<Label x:Name="Prompt" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" ></Label>
+			<Label x:Name="Prompt" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Foreground="white"></Label>
 			<TextBox x:Name="Inizio" Grid.Row="3" Grid.Column="3" />
-			<Label x:Name="Prompt1" Grid.Row="3" Grid.Column="4" />
+			<Label x:Name="Prompt1" Grid.Row="3" Grid.Column="4" Foreground="white"/>
 			<TextBox x:Name="Fine" Grid.Row="3" Grid.Column="5" />
-			<Button x:Name="ok" Click="OnOk_Click" Grid.Row="3" Grid.Column="6" />
-			<Button x:Name="info" Click="OnInfo_Click" Grid.Row="4" Grid.Column="1" />
+			<Button x:Name="ok" Click="OnOk_Click" Grid.Row="3" Grid.Column="6" Foreground="white"/>
+			<Button x:Name="info" Click="OnInfo_Click" Grid.Row="4" Grid.Column="1" Foreground="white"/>
 			<Label x:Name="lblInfo" Grid.Row="3" Grid.Column="7" Foreground="red">pROVA</Label>
 		</Grid>
 		<Grid x:Name="greeting" IsVisible="false">
@@ -85,10 +85,10 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 			<Image Source="avares://Solitario/Assets/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="10" Stretch="Fill"/>
-			<Label x:Name="msgfine" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-			<Button x:Name="greetingsClose" Click="OnFine_Click" Grid.Row="4" Grid.Column="1"/>
-			<Button x:Name="greetingsOk" Click="greetingsOk_Click" Grid.Row="4" Grid.Column="0" />
-			<Button x:Name="condividi" Click="greetingsShare_Click" Grid.Row="4" Grid.Column="2">Condividi</Button>
+			<Label x:Name="msgfine" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Foreground="white"></Label>
+			<Button x:Name="greetingsClose" Click="OnFine_Click" Grid.Row="4" Grid.Column="1" Foreground="white"/>
+			<Button x:Name="greetingsOk" Click="greetingsOk_Click" Grid.Row="4" Grid.Column="0" Foreground="white"/>
+			<Button x:Name="condividi" Click="greetingsShare_Click" Grid.Row="4" Grid.Column="2" Foreground="white">Condividi</Button>
 		</Grid>
 
 		<Grid x:Name="Info" IsVisible="false">
@@ -99,16 +99,16 @@
 				<RowDefinition/>
 				<RowDefinition/>
 				<RowDefinition/>
-				<RowDefinition />
+				<RowDefinition/>
 			</Grid.RowDefinitions>
-			<Image Source="avares://Solitario/Assets/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="10" Stretch="Fill"/>
-			<Label Grid.Row="0">© Giulio Sorrentino 2023</Label>
-			<Label Grid.Row="1">La torre di babele v 1.1</Label>
-			<Label Grid.Row="2" x:Name="lblinfo" />
-			<Label Grid.Row="3">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</Label>
-			<Label Grid.Row="4" x:Name="lblimageinfo" />
-			<Button Grid.Row="5" Click="OnSito_Click">Maggiori Informazioni</Button>
-			<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="6" />
+			<Image Source="avares://Solitario/Assets/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="10" Stretch="Fill"/>
+			<Label Grid.Row="0" Foreground="white">© Giulio Sorrentino 2023</Label>
+			<Label Grid.Row="1" Foreground="white">La torre di babele v 1.1</Label>
+			<Label Grid.Row="2" Foreground="white" x:Name="lblinfo" />
+			<Label Grid.Row="3" Foreground="white">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</Label>
+			<Label Grid.Row="4" Foreground="white" x:Name="lblimageinfo" />
+			<Button Grid.Row="5" Click="OnSito_Click" Foreground="white">Maggiori Informazioni</Button>
+			<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="6" Foreground="white"/>
 		</Grid>
 	</Grid>
 </UserControl>
