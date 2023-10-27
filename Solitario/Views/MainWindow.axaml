@@ -6,7 +6,7 @@
         xmlns:views="clr-namespace:Solitario.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Solitario.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/icon.jpg"
         Title="Solitario">
 	<Window.Resources>
 		<ResourceDictionary>
@@ -30,6 +30,7 @@
 			<x:String x:Key="VuoiFareNuovaPartita">mosse. Vuoi effettuare una nuova partita?</x:String>
 			<x:String x:Key="info">La torre di Babele: solitario che permette di spostare le carte solo sulle carte più grandi</x:String>
 			<x:String x:Key="imageinfo">L'immagine di sfondo é fatta da Giulio Sorrentino alla riserva naturale degli astroni del WWF. E' sotto licenza creative commons sharealike 4.0 international.</x:String>
+			<x:String x:Key="Errore">Errore</x:String>
 		</ResourceDictionary>
 	</Window.Resources>
         <views:MainView />

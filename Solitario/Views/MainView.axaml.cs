@@ -1,11 +1,16 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Notifications;
 using Avalonia.Interactivity;
 using Avalonia.Platform;
 using Solitario.Avalonia;
 using System.Diagnostics;
 using System;
+using Microsoft.Toolkit.Uwp.Notifications;
+using DesktopNotifications.FreeDesktop;
+using DesktopNotifications.Windows;
+using System.Runtime.InteropServices;
+using DesktopNotifications;
+using DesktopNotifications.Apple;
 
 namespace Solitario.Views;
 
@@ -14,12 +19,11 @@ public partial class MainView : UserControl
     UInt16 i, j, k;
     private carta[] vettore;
     private ulong mosse = 0;
-//    private WindowNotificationManager notification;
+    public static INotificationManager notification;
     public MainView()
     {
         int a = 0, b = 0;
         InitializeComponent();
-  //      notification = new WindowNotificationManager(MainWindow.Instance) { Position = NotificationPosition.BottomRight };
         vettore = new carta[30];
         elaboratoreCarteSolitario e = new elaboratoreCarteSolitario();
         mazzo m = new mazzo(e);
@@ -70,11 +74,30 @@ public partial class MainView : UserControl
 
     private void OnOk_Click(object sender, RoutedEventArgs e)
     {
-        lblInfo.Content = "";
         UInt16 inizio, fine, a = 0, b = 0;
-        if (Inizio.Text == null || Inizio.Text == "") { /*notification.Show(*/ lblInfo.Content=$"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}" /*)*/ ; return; }
+        if (Inizio.Text == null || Inizio.Text == "")
+        {
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
+            };
 
-        if (Fine.Text == null || Fine.Text == "") { /*notification.Show(*/ lblInfo.Content = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("EVuota")}" /*)*/ ; return; }
+            notification.ShowNotification(not);
+            return;
+        }
+
+        if (Fine.Text == null || Fine.Text == "")
+        {
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("EVuota")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
+        }
 
         try
         {
@@ -82,8 +105,14 @@ public partial class MainView : UserControl
         }
         catch (FormatException ex)
         {
-            /*notification.Show(*/
-            lblInfo.Content = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonIntera")}" /*)*/ ; return;
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonIntera")}"
+            };
+
+           notification.ShowNotification(not);
+           return;
         }
         inizio--;
         try
@@ -92,12 +121,49 @@ public partial class MainView : UserControl
         }
         catch (FormatException ex)
         {
-            /*notification.Show(*/lblInfo.Content = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonIntera")}"/*)*/; return;
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonIntera")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
         }
         fine--;
-        if (inizio > 2) { /*notification.Show(*/lblinfo.Content = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"/*)*/; return; }
-        if (fine > 2) { /*notification.Show(*/lblinfo.Content = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"/*)*/; return; }
-        if (inizio == fine) { /*notification.Show(*/lblinfo.Content = $"{MainWindow.Instance.FindResource("LeRigheCoincidono")}"/*)*/; return; }
+        if (inizio > 2)
+        {
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
+        }
+        if (fine > 2)
+        {
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonNelRange")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
+        }
+        if (inizio == fine)
+        {
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LeRigheCoincidono")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
+        }
         switch (inizio)
         {
             case 0: a = i; break;
@@ -117,7 +183,14 @@ public partial class MainView : UserControl
         }
         catch (System.IndexOutOfRangeException ex)
         {
-            /*notification.Show(*/lblInfo.Content = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"/*)*/; return;
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
         }
         carta c1 = null;
         try
@@ -125,7 +198,17 @@ public partial class MainView : UserControl
             c1 = vettore[fine * 10 + b];
         }
         catch (IndexOutOfRangeException ex) {; }
-        if (c.CompareTo(c1) == -1) { /*notification.Show(*/ lblInfo.Content = $"{MainWindow.Instance.FindResource("OperazioneNonValida")}"/*)*/; return; }
+        if (c.CompareTo(c1) == -1)
+        {
+            Notification not = new Notification
+            {
+                Title = $"{MainWindow.Instance.FindResource("Errore")}",
+                Body = $"{MainWindow.Instance.FindResource("OperazioneNonValida")}"
+            };
+
+            notification.ShowNotification(not);
+            return;
+        }
         Image img = this.Find<Image>("carta" + (inizio * 10 + a));
         Image img1 = this.Find<Image>("carta" + (fine * 10 + ++b));
         vettore[fine * 10 + b] = vettore[inizio * 10 + a];

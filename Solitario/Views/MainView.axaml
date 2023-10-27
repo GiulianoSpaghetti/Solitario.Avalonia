@@ -6,6 +6,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Solitario.Views.MainView"
              x:DataType="vm:MainViewModel">
+	<UserControl.Styles>
+		<Style Selector="Label">
+			<Setter Property="Foreground" Value="White" />
+		</Style>
+		<Style Selector="Button">
+			<Setter Property="Foreground" Value="White" />
+		</Style>
+	</UserControl.Styles>
   <Design.DataContext>
     <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -63,13 +71,12 @@
 			<Image x:Name="carta27" Grid.Row="2" Grid.Column="7" IsVisible="false"/>
 			<Image x:Name="carta28" Grid.Row="2" Grid.Column="8" IsVisible="false"/>
 			<Image x:Name="carta29" Grid.Row="2" Grid.Column="9" IsVisible="false"/>
-			<Label x:Name="Prompt" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Foreground="white"></Label>
+			<Label x:Name="Prompt" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></Label>
 			<TextBox x:Name="Inizio" Grid.Row="3" Grid.Column="3" />
-			<Label x:Name="Prompt1" Grid.Row="3" Grid.Column="4" Foreground="white"/>
+			<Label x:Name="Prompt1" Grid.Row="3" Grid.Column="4" />
 			<TextBox x:Name="Fine" Grid.Row="3" Grid.Column="5" />
-			<Button x:Name="ok" Click="OnOk_Click" Grid.Row="3" Grid.Column="6" Foreground="white"/>
-			<Button x:Name="info" Click="OnInfo_Click" Grid.Row="4" Grid.Column="1" Foreground="white"/>
-			<Label x:Name="lblInfo" Grid.Row="3" Grid.Column="7" Foreground="red">pROVA</Label>
+			<Button x:Name="ok" Click="OnOk_Click" Grid.Row="3" Grid.Column="6" />
+			<Button x:Name="info" Click="OnInfo_Click" Grid.Row="4" Grid.Column="1" />
 		</Grid>
 		<Grid x:Name="greeting" IsVisible="false">
 			<Grid.ColumnDefinitions>
