@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "La torre di babele"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "Giulio Sorrentino"
 #define MyAppURL "https://github.com/solitario.avalonia"
-#define MyAppExeName "Solitario.Avalonia.exe"
+#define MyAppExeName "Solitario.Desktop.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -20,11 +20,11 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf64}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\numer\source\repos\Solitario.Avalonia\LICENSE.txt
+LicenseFile=C:\Users\numer\source\repos\Solitario.Avalonia\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\numer
-OutputBaseFilename=La torre di babele-1.1
+OutputBaseFilename=La torre di babele-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -62,8 +62,8 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\numer\source\repos\Solitario.Avalonia\Solitario.Avalonia\bin\Release\net7.0\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\numer\source\repos\Solitario.Avalonia\Solitario.Avalonia\bin\Release\net7.0\win-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\numer\source\repos\Solitario.Avalonia\Solitario.Desktop\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\numer\source\repos\Solitario.Avalonia\Solitario.Desktop\bin\Release\net7.0-windows10.0.22621.0\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

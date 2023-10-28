@@ -19,7 +19,7 @@ public partial class MainView : UserControl
     UInt16 i, j, k;
     private carta[] vettore;
     private ulong mosse = 0;
-    public static INotificationManager notification;
+    private Notification not;
     public MainView()
     {
         int a = 0, b = 0;
@@ -77,25 +77,25 @@ public partial class MainView : UserControl
         UInt16 inizio, fine, a = 0, b = 0;
         if (Inizio.Text == null || Inizio.Text == "")
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
 
         if (Fine.Text == null || Fine.Text == "")
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("EVuota")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
 
@@ -105,13 +105,13 @@ public partial class MainView : UserControl
         }
         catch (FormatException ex)
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonIntera")}"
             };
 
-           notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
            return;
         }
         inizio--;
@@ -121,47 +121,47 @@ public partial class MainView : UserControl
         }
         catch (FormatException ex)
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonIntera")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         fine--;
         if (inizio > 2)
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         if (fine > 2)
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonNelRange")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         if (inizio == fine)
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LeRigheCoincidono")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         switch (inizio)
@@ -183,13 +183,13 @@ public partial class MainView : UserControl
         }
         catch (System.IndexOutOfRangeException ex)
         {
-            Notification not = new Notification
+            not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         carta c1 = null;
@@ -206,7 +206,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("OperazioneNonValida")}"
             };
 
-            notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         Image img = this.Find<Image>("carta" + (inizio * 10 + a));

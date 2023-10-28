@@ -29,7 +29,7 @@ class Program
     [STAThread]
     public static void Main(string[] args)
     {
-        MainView.notification = CreateManager();
+        MainWindow.notification = CreateManager();
         BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
     }
 
