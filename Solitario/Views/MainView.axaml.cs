@@ -1,39 +1,34 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Platform;
-using Solitario.Avalonia;
 using System.Diagnostics;
 using System;
-using Microsoft.Toolkit.Uwp.Notifications;
-using DesktopNotifications.FreeDesktop;
-using DesktopNotifications.Windows;
-using System.Runtime.InteropServices;
+using org.altervista.numerone.framework;
 using DesktopNotifications;
-using DesktopNotifications.Apple;
+using DesktopNotifications.FreeDesktop;
+using System.Runtime.InteropServices;
 
 namespace Solitario.Views;
 
 public partial class MainView : UserControl
 {
     UInt16 i, j, k;
-    private carta[] vettore;
+    private Carta[] vettore;
     private ulong mosse = 0;
-    private Notification not;
+
     public MainView()
     {
         int a = 0, b = 0;
         InitializeComponent();
-        vettore = new carta[30];
-        elaboratoreCarteSolitario e = new elaboratoreCarteSolitario();
-        mazzo m = new mazzo(e);
-
-        m.setNome("Napoletano");
-        carta.inizializza(10, cartaHelperSolitario.getIstanza());
+        vettore = new Carta[30];
+        ElaboratoreCarteBriscola e = new ElaboratoreCarteBriscola(true, 9, 1, 9);
+        Mazzo m = new Mazzo(e);
+        CartaHelperSolitario chs = new CartaHelperSolitario();
+        m.SetNome("Napoletano");
+        Carta.Inizializza("", m, 10, chs, "","","","","","","","");
 
         for (UInt16 i = 0; i < 9; i++)
         {
-            vettore[a * 10 + b] = carta.getCarta(m.getCarta());
+            vettore[a * 10 + b] = Carta.GetCarta(m.GetCarta());
             a++;
             if (a > 2)
             {
@@ -41,23 +36,23 @@ public partial class MainView : UserControl
                 b++;
             }
         }
-        carta0.Source = vettore[0].getImmagine();
+        carta0.Source = vettore[0].GetImmagine();
         carta0.IsVisible = true;
-        carta1.Source = vettore[1].getImmagine();
+        carta1.Source = vettore[1].GetImmagine();
         carta1.IsVisible = true;
-        carta2.Source = vettore[2].getImmagine();
+        carta2.Source = vettore[2].GetImmagine();
         carta2.IsVisible = true;
-        carta10.Source = vettore[10].getImmagine();
+        carta10.Source = vettore[10].GetImmagine();
         carta10.IsVisible = true;
-        carta11.Source = vettore[11].getImmagine();
+        carta11.Source = vettore[11].GetImmagine();
         carta11.IsVisible = true;
-        carta12.Source = vettore[12].getImmagine();
+        carta12.Source = vettore[12].GetImmagine();
         carta12.IsVisible = true;
-        carta20.Source = vettore[20].getImmagine();
+        carta20.Source = vettore[20].GetImmagine();
         carta20.IsVisible = true;
-        carta21.Source = vettore[21].getImmagine();
+        carta21.Source = vettore[21].GetImmagine();
         carta21.IsVisible = true;
-        carta22.Source = vettore[22].getImmagine();
+        carta22.Source = vettore[22].GetImmagine();
         carta22.IsVisible = true;
         i = j = k = 2;
         ok.Content = MainWindow.Instance.FindResource("Ok");
@@ -77,7 +72,7 @@ public partial class MainView : UserControl
         UInt16 inizio, fine, a = 0, b = 0;
         if (Inizio.Text == null || Inizio.Text == "")
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
@@ -89,7 +84,7 @@ public partial class MainView : UserControl
 
         if (Fine.Text == null || Fine.Text == "")
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("EVuota")}"
@@ -105,7 +100,7 @@ public partial class MainView : UserControl
         }
         catch (FormatException ex)
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonIntera")}"
@@ -121,7 +116,7 @@ public partial class MainView : UserControl
         }
         catch (FormatException ex)
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonIntera")}"
@@ -133,7 +128,7 @@ public partial class MainView : UserControl
         fine--;
         if (inizio > 2)
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"
@@ -144,7 +139,7 @@ public partial class MainView : UserControl
         }
         if (fine > 2)
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonNelRange")}"
@@ -155,7 +150,7 @@ public partial class MainView : UserControl
         }
         if (inizio == fine)
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LeRigheCoincidono")}"
@@ -176,14 +171,14 @@ public partial class MainView : UserControl
             case 1: b = j; break;
             case 2: b = k; break;
         }
-        carta c;
+        Carta c;
         try
         {
             c = vettore[inizio * 10 + a];
         }
         catch (System.IndexOutOfRangeException ex)
         {
-            not = new Notification
+            Notification not = new Notification
             {
                 Title = $"{MainWindow.Instance.FindResource("Errore")}",
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
@@ -192,7 +187,7 @@ public partial class MainView : UserControl
             MainWindow.notification.ShowNotification(not);
             return;
         }
-        carta c1 = null;
+        Carta c1 = null;
         try
         {
             c1 = vettore[fine * 10 + b];
@@ -270,8 +265,8 @@ public partial class MainView : UserControl
     private void greetingsOk_Click(object sender, RoutedEventArgs e)
     {
         UInt16 a = 0, b = 0;
-        elaboratoreCarteSolitario el = new elaboratoreCarteSolitario();
-        mazzo m = new mazzo(el);
+        ElaboratoreCarteBriscola el = new ElaboratoreCarteBriscola(false, 1,9,9);
+        Mazzo m = new Mazzo(el);
         Info.IsVisible = false;
         Applicazione.IsVisible = true;
         Image img;
@@ -283,7 +278,7 @@ public partial class MainView : UserControl
         }
         for (UInt16 i = 0; i < 9; i++)
         {
-            vettore[a * 10 + b] = carta.getCarta(m.getCarta());
+            vettore[a * 10 + b] = Carta.GetCarta(m.GetCarta());
             a++;
             if (a > 2)
             {
@@ -291,23 +286,23 @@ public partial class MainView : UserControl
                 b++;
             }
         }
-        carta0.Source = vettore[0].getImmagine();
+        carta0.Source = vettore[0].GetImmagine();
         carta0.IsVisible = true;
-        carta1.Source = vettore[1].getImmagine();
+        carta1.Source = vettore[1].GetImmagine();
         carta1.IsVisible = true;
-        carta2.Source = vettore[2].getImmagine();
+        carta2.Source = vettore[2].GetImmagine();
         carta2.IsVisible = true;
-        carta10.Source = vettore[10].getImmagine();
+        carta10.Source = vettore[10].GetImmagine();
         carta10.IsVisible = true;
-        carta11.Source = vettore[11].getImmagine();
+        carta11.Source = vettore[11].GetImmagine();
         carta11.IsVisible = true;
-        carta12.Source = vettore[12].getImmagine();
+        carta12.Source = vettore[12].GetImmagine();
         carta12.IsVisible = true;
-        carta20.Source = vettore[20].getImmagine();
+        carta20.Source = vettore[20].GetImmagine();
         carta20.IsVisible = true;
-        carta21.Source = vettore[21].getImmagine();
+        carta21.Source = vettore[21].GetImmagine();
         carta21.IsVisible = true;
-        carta22.Source = vettore[22].getImmagine();
+        carta22.Source = vettore[22].GetImmagine();
         carta22.IsVisible = true;
         i = j = k = 2;
         greeting.IsVisible = false;
