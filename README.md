@@ -7,7 +7,7 @@ https://1drv.ms/u/s!ApmOB0x2yBN0ks9R05v0pEV7H21HtA?e=QD1vJR
 ## Come installare
 
 ## Su Debian
-Seguire le istruzioni all'indirizzo http://numeronesoftddns.net:8080
+Seguire le istruzioni all'indirizzo http://numeronesoft.ddns.net:8080
 
 ## Su Windows
 
