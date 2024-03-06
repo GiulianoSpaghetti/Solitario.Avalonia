@@ -2,12 +2,14 @@
 La torre di babele in avalonia, si risolve spostando le carte su carte più grandi e riesce sempre.
 
 ## GamePlay
-https://1drv.ms/u/s!ApmOB0x2yBN0ks9R05v0pEV7H21HtA?e=QD1vJR
+https://1drv.ms/u/s!ApmOB0x2yBN0ks9R05v0pEV7H21HtA?e=QD1vJR su windows
+
+https://1drv.ms/u/s!ApmOB0x2yBN0ktR7kKIHudYwBBy7Wg?e=bUiJid su debian
 
 ## Come installare
 
 ## Su Debian
-Seguire le istruzioni all'indirizzo http://numeronesoft.ddns.net:8080
+Seguire le istruzioni all'indirizzo http://numeronesoft.ddns.net:8080 per abilitare il repository, poi installare solitario.avalonia.
 
 ## Su Windows
 
