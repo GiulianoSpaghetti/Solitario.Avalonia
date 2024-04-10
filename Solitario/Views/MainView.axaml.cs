@@ -24,7 +24,7 @@ public partial class MainView : UserControl
         Mazzo m = new Mazzo(e);
         CartaHelperSolitario chs = new CartaHelperSolitario();
         m.SetNome("Napoletano");
-        Carta.Inizializza("", m, 10, chs, "","","","","","","","");
+        Carta.Inizializza("", m, 10, chs, "","","","","","","","", "Solitario");
 
         for (UInt16 i = 0; i < 9; i++)
         {

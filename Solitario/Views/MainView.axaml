@@ -109,7 +109,7 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 			<Image Source="avares://Solitario/Assets/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="10" Stretch="Fill"/>
-			<Label Grid.Row="0" Foreground="white">© Giulio Sorrentino 2023</Label>
+			<Label Grid.Row="0" Foreground="white">© Giulio Sorrentino 2023-2024</Label>
 			<Label Grid.Row="1" Foreground="white">La torre di babele v 1.1</Label>
 			<Label Grid.Row="2" Foreground="white" x:Name="lblinfo" />
 			<Label Grid.Row="3" Foreground="white">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</Label>
