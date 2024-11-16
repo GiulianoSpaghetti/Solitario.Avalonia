@@ -17,7 +17,7 @@ Seguire le istruzioni all'indirizzo http://numeronesoft.ddns.net:8080 per abilit
 
 ## L'immagine di sfondo
 
-Non tutti sanno che quando questo prodotto è stato concepito, Giuliano Spaghetti era diviso tra due donne, per questo le "cavalle" nell'immagine sono due.
+Non tutti sanno che quando questo prodotto è stato concepito, Giuliano Spaghetti era diviso tra due donne: per questo le "cavalle" nell'immagine sono due.
 
 ## Donazioni
 
