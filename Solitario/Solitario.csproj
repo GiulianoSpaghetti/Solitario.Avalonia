@@ -1,83 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
-  
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
-  
   <ItemGroup>
-    <None Remove="Assets\0.png" />
-    <None Remove="Assets\1.png" />
-    <None Remove="Assets\2.png" />
-    <None Remove="Assets\3.png" />
-    <None Remove="Assets\4.png" />
-    <None Remove="Assets\5.png" />
-    <None Remove="Assets\6.png" />
-    <None Remove="Assets\7.png" />
-    <None Remove="Assets\8.png" />
-    <None Remove="Assets\9.png" />
-    <None Remove="Assets\background.jpg" />
-    <None Remove="Assets\icon.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.10" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.10" />
+    <PackageReference Include="Avalonia" Version="11.2.4" />
+    <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.22087.20231008" />
+    <PackageReference Include="Avalonia.BuildServices" Version="0.0.31" />
+    <PackageReference Include="avalonia.controls.colorpicker" Version="11.2.4" />
+    <PackageReference Include="avalonia.controls.datagrid" Version="11.2.4" />
+    <PackageReference Include="avalonia.remote.protocol" Version="11.2.4" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.4" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.4" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.4" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.9" />
-    <PackageReference Include="CardFramework.avalonia" Version="1.3.3" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.3" />
+    <PackageReference Include="avalonia.themes.simple" Version="11.2.4" />
+    <PackageReference Include="CardFramework.avalonia" Version="1.4.9" />
     <PackageReference Include="DesktopNotifications" Version="1.3.1" />
     <PackageReference Include="DesktopNotifications.Apple" Version="1.3.1" />
     <PackageReference Include="DesktopNotifications.FreeDesktop" Version="1.3.1" />
     <PackageReference Include="DesktopNotifications.Windows" Version="1.3.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\0.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\1.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\2.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\3.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\4.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\5.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\6.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\7.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\8.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\9.png" />
+    <PackageReference Include="DynamicData" Version="9.1.1" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.4" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="9.0.2" />
+    <PackageReference Include="reactiveui" Version="20.1.63" />
+    <PackageReference Include="Splat" Version="15.3.1" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.2" />
+    <PackageReference Include="System.Security.AccessControl" Version="6.0.1" />
+    <PackageReference Include="Tmds.DBus" Version="0.21.2" />
   </ItemGroup>
 </Project>

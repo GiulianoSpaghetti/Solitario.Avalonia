@@ -28,14 +28,14 @@ namespace windatefrom_setup
             );
 
             project.GUID = new Guid("AC9457B4-8962-4BF7-B53C-FD625A325931");
-            project.Version = new Version("3.0");
+            project.Version = new Version("3.0.1.4");
             project.Platform = Platform.x64;
-            project.SourceBaseDir = "F:\\source\\Solitario.Avalonia\\Solitario.Desktop\\bin\\Release\\net8.0-windows10.0.22621.0";
+            project.SourceBaseDir = "E:\\source\\Solitario.Avalonia\\Solitario.Desktop\\bin\\Release\\net9.0-windows10.0.26100.0";
             project.LicenceFile = "LICENSE.rtf";
-            project.OutDir = "f:\\";
+            project.OutDir = "E:\\";
             project.ControlPanelInfo.Manufacturer = "Giulio Sorrentino";
             project.ControlPanelInfo.Name = "La torre di babele";
-            project.ControlPanelInfo.HelpLink = "https://github.com/numerunix/WinDateFrom.Avalonia/issues";
+            project.ControlPanelInfo.HelpLink = "https://github.com/GiulianoSpaghetti/Solitario.Avalonia/issues";
             project.Description = "Un semplice solitario per spratichirsi con le carte che riesce sempre";
             //            project.Properties.SetValue("ALLUSERS", 0);
             project.BuildMsi();

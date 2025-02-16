@@ -22,7 +22,7 @@ public partial class MainView : UserControl
         vettore = new Carta[30];
         ElaboratoreCarteBriscola e = new ElaboratoreCarteBriscola(true, 9, 1, 9);
         Mazzo m = new Mazzo(e);
-        CartaHelperSolitario chs = new CartaHelperSolitario();
+        org.altervista.numerone.framework.solitario.CartaHelper chs = new org.altervista.numerone.framework.solitario.CartaHelper();
         m.SetNome("Napoletano");
         Carta.Inizializza("", m, 10, chs, "","","","","","","","", "Solitario");
 
@@ -312,7 +312,7 @@ public partial class MainView : UserControl
     {
         var psi = new ProcessStartInfo
         {
-            FileName = "https://github.com/numerunix/solitario.avalonia",
+            FileName = "https://github.com/GiulianoSpaghetti/solitario.avalonia",
             UseShellExecute = true
         };
         Process.Start(psi);
