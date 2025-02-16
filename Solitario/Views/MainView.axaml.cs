@@ -56,8 +56,8 @@ public partial class MainView : UserControl
         carta22.IsVisible = true;
         i = j = k = 2;
         ok.Content = MainWindow.Instance.FindResource("Ok");
-        Prompt.Content = MainWindow.Instance.FindResource("SpostaCarta");
-        Prompt1.Content = MainWindow.Instance.FindResource("SuRiga");
+        Prompt.Text = MainWindow.Instance.FindResource("SpostaCarta") as string;
+        Prompt1.Text = MainWindow.Instance.FindResource("SuRiga") as string;
         info.Content = MainWindow.Instance.FindResource("Informazioni");
         greetingsClose.Content = MainWindow.Instance.FindResource("Annulla");
         greetingsOk.Content = MainWindow.Instance.FindResource("Ok");
