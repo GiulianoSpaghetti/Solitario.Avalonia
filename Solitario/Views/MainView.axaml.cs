@@ -6,15 +6,17 @@ using org.altervista.numerone.framework;
 using DesktopNotifications;
 using DesktopNotifications.FreeDesktop;
 using System.Runtime.InteropServices;
+using Avalonia.Platform.Storage;
 
 namespace Solitario.Views;
 
 public partial class MainView : UserControl
 {
-    UInt16 i, j, k;
+    private UInt16 i, j, k;
     private Carta[] vettore;
     private ulong mosse = 0;
-
+    private static ILauncher? launcher = null;
+    private static Uri HomePage= new Uri("https://github.com/GiulianoSpaghetti/solitario.avalonia");
     public MainView()
     {
         int a = 0, b = 0;
@@ -63,8 +65,8 @@ public partial class MainView : UserControl
         greetingsOk.Content = MainWindow.Instance.FindResource("Ok");
         condividi.Content = MainWindow.Instance.FindResource("Condividi");
         InfoApp.Content = MainWindow.Instance.FindResource("Applicazione");
-        lblinfo.Content = MainWindow.Instance.FindResource("info");
-        lblimageinfo.Content = MainWindow.Instance.FindResource("imageinfo");
+        lblinfo.Text = MainWindow.Instance.FindResource("info") as string;
+        lblimageinfo.Text = MainWindow.Instance.FindResource("imageinfo") as string;
     }
 
     private void OnOk_Click(object sender, RoutedEventArgs e)
@@ -241,7 +243,7 @@ public partial class MainView : UserControl
             {
                 Applicazione.IsVisible = false;
                 greeting.IsVisible = true;
-                msgfine.Content = $"{MainWindow.Instance.FindResource("SolitarioFinito")} {mosse} {MainWindow.Instance.FindResource("VuoiFareNuovaPartita")}";
+                msgfine.Text = $"{MainWindow.Instance.FindResource("SolitarioFinito")} {mosse} {MainWindow.Instance.FindResource("VuoiFareNuovaPartita")}";
                 condividi.IsEnabled = true;
             }
         }
@@ -310,23 +312,18 @@ public partial class MainView : UserControl
     }
     private void OnSito_Click(object sender, RoutedEventArgs e)
     {
-        var psi = new ProcessStartInfo
+        if (launcher == null)
         {
-            FileName = "https://github.com/GiulianoSpaghetti/solitario.avalonia",
-            UseShellExecute = true
-        };
-        Process.Start(psi);
+            launcher = TopLevel.GetTopLevel(this).Launcher;
+        }
+        launcher.LaunchUriAsync(HomePage);
     }
     private void greetingsShare_Click(object sender, RoutedEventArgs e)
     {
-        var psi = new ProcessStartInfo
+        if (launcher == null)
         {
-            FileName = $"https://twitter.com/intent/tweet?text=Ho%20completato%20la%20torre%20di%babele%20in%20avalonia%20di%20numerone%20in%20{mosse}%20mosse&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fsolitario.Avalonia",
-            UseShellExecute = true
-        };
-        condividi.IsEnabled = false;
-        Process.Start(psi);
+            launcher = TopLevel.GetTopLevel(this).Launcher;
+        }
+        launcher.LaunchUriAsync(new Uri($"https://twitter.com/intent/tweet?text=Ho%20completato%20la%20torre%20di%babele%20in%20avalonia%20di%20numerone%20in%20{mosse}%20mosse&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fsolitario.Avalonia"));
     }
-
-
 }

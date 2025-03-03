@@ -7,7 +7,7 @@
              x:Class="Solitario.Views.MainView"
              x:DataType="vm:MainViewModel">
 	<UserControl.Styles>
-		<Style Selector="Label">
+		<Style Selector="TextBlock">
 			<Setter Property="Foreground" Value="White" />
 		</Style>
 		<Style Selector="Button">
@@ -92,10 +92,10 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 			<Image Source="avares://Solitario/Assets/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="10" Stretch="Fill"/>
-			<TextBlock x:Name="msgfine" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Foreground="white" TextWrapping="Wrap" />
-			<Button x:Name="greetingsClose" Click="OnFine_Click" Grid.Row="4" Grid.Column="1" Foreground="white"/>
-			<Button x:Name="greetingsOk" Click="greetingsOk_Click" Grid.Row="4" Grid.Column="0" Foreground="white"/>
-			<Button x:Name="condividi" Click="greetingsShare_Click" Grid.Row="4" Grid.Column="2" Foreground="white">Condividi</Button>
+			<TextBlock x:Name="msgfine" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap" />
+			<Button x:Name="greetingsClose" Click="OnFine_Click" Grid.Row="4" Grid.Column="1" />
+			<Button x:Name="greetingsOk" Click="greetingsOk_Click" Grid.Row="4" Grid.Column="0" />
+			<Button x:Name="condividi" Click="greetingsShare_Click" Grid.Row="4" Grid.Column="2" >Condividi</Button>
 		</Grid>
 
 		<Grid x:Name="Info" IsVisible="false">
@@ -109,13 +109,13 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 			<Image Source="avares://Solitario/Assets/background.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="10" Stretch="Fill"/>
-			<TextBlock Grid.Row="0" Foreground="white" TextWrapping="Wrap">© Giulio Sorrentino 2023-2025</TextBlock>
-			<TextBlock Grid.Row="1" Foreground="white" TextWrapping="Wrap">La torre di babele v 3.0</TextBlock>
-			<TextBlock Grid.Row="2" Foreground="white" TextWrapping="Wrap" x:Name="lblinfo" />
-			<TextBlock Grid.Row="3" Foreground="white" TextWrapping="Wrap">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</TextBlock>
-			<TextBlock Grid.Row="4" Foreground="white" TextWrapping="Wrap" x:Name="lblimageinfo" />
-			<Button Grid.Row="5" Click="OnSito_Click" Foreground="white">Maggiori Informazioni</Button>
-			<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="6" Foreground="white"/>
+			<TextBlock Grid.Row="0" TextWrapping="Wrap">© Giulio Sorrentino 2023-2025</TextBlock>
+			<TextBlock Grid.Row="1" TextWrapping="Wrap">La torre di babele v 3.0</TextBlock>
+			<TextBlock Grid.Row="2" TextWrapping="Wrap" x:Name="lblinfo" />
+			<TextBlock Grid.Row="3" TextWrapping="Wrap">Licenza: GPL v3 o, secondo la tua opinione, qualsiasi versione successiva</TextBlock>
+			<TextBlock Grid.Row="4" TextWrapping="Wrap" x:Name="lblimageinfo" />
+			<Button Grid.Row="5" Click="OnSito_Click">Maggiori Informazioni</Button>
+			<Button x:Name="InfoApp" Click="OnApp_Click" Grid.Row="6"/>
 		
 </Grid>
 	</Grid>
