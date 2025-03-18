@@ -6,7 +6,7 @@
     To suppress generation of this file remove `set ide=true` from the PostBuildEvent of the VS project
 </auto-generated>
 -->
-  <Package Compressed="yes" ProductCode="ac9457b4-8962-4bf7-b53c-fd628a326936" Name="Solitario.Avalonia" Language="1033" Version="3.0.1.4" UpgradeCode="ac9457b4-8962-4bf7-b53c-fd625a325931" Manufacturer="Giulio Sorrentino" InstallerVersion="200">
+  <Package Compressed="yes" ProductCode="ac9457b4-8962-4bf7-b53c-fd628a327932" Name="Solitario.Avalonia" Language="1033" Version="3.0.2.0" UpgradeCode="ac9457b4-8962-4bf7-b53c-fd625a325931" Manufacturer="Giulio Sorrentino" InstallerVersion="200">
     <SummaryInformation Codepage="Windows-1252" Description="Un semplice solitario per spratichirsi con le carte che riesce sempre" />
     <Media Id="1" Cabinet="Solitario.Avalonia.cab" EmbedCab="yes" />
 
@@ -258,7 +258,7 @@
 
     <WixUI Id="WixUI_Minimal" xmlns="http://wixtoolset.org/schemas/v4/wxs/ui" />
 
-    <WixVariable Id="WixUILicenseRtf" Value="E:\source\Solitario.Avalonia\Solitario.Desktop\bin\Release\net9.0-windows10.0.26100.0\LICENSE.rtf" />
+    <WixVariable Id="WixUILicenseRtf" Value="F:\source\Solitario.Avalonia\Solitario.Desktop\bin\Release\net9.0-windows10.0.26100.0\LICENSE.rtf" />
 
     <UIRef Id="WixUI_ErrorProgressText" />
 

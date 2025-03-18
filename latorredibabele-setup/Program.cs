@@ -28,11 +28,11 @@ namespace windatefrom_setup
             );
 
             project.GUID = new Guid("AC9457B4-8962-4BF7-B53C-FD625A325931");
-            project.Version = new Version("3.0.1.4");
+            project.Version = new Version("3.0.2.0");
             project.Platform = Platform.x64;
-            project.SourceBaseDir = "E:\\source\\Solitario.Avalonia\\Solitario.Desktop\\bin\\Release\\net9.0-windows10.0.26100.0";
+            project.SourceBaseDir = "F:\\source\\Solitario.Avalonia\\Solitario.Desktop\\bin\\Release\\net9.0-windows10.0.26100.0";
             project.LicenceFile = "LICENSE.rtf";
-            project.OutDir = "E:\\";
+            project.OutDir = "F:\\";
             project.ControlPanelInfo.Manufacturer = "Giulio Sorrentino";
             project.ControlPanelInfo.Name = "La torre di babele";
             project.ControlPanelInfo.HelpLink = "https://github.com/GiulianoSpaghetti/Solitario.Avalonia/issues";
