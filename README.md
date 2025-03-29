@@ -2,9 +2,9 @@
 La torre di babele in avalonia, si risolve spostando le carte su carte più grandi e riesce sempre.
 
 ## GamePlay
-https://1drv.ms/u/s!ApmOB0x2yBN0ks9R05v0pEV7H21HtA?e=QD1vJR su windows
+https://photos.app.goo.gl/HP23vhWqXQLZ19Mg6 su windows
 
-https://1drv.ms/u/s!ApmOB0x2yBN0ktR7kKIHudYwBBy7Wg?e=bUiJid su debian
+https://photos.app.goo.gl/9cxKcxMxsbckju7H8 su debian
 
 ## Come installare
 
