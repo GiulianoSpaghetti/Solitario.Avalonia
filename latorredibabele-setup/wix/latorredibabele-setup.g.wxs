@@ -6,7 +6,7 @@
     To suppress generation of this file remove `set ide=true` from the PostBuildEvent of the VS project
 </auto-generated>
 -->
-  <Package Compressed="yes" ProductCode="ac9457b4-8962-4bf7-b53c-fd628a327932" Name="Solitario.Avalonia" Language="1033" Version="3.0.2.0" UpgradeCode="ac9457b4-8962-4bf7-b53c-fd625a325931" Manufacturer="Giulio Sorrentino" InstallerVersion="200">
+  <Package Compressed="yes" ProductCode="ac9457b4-8962-4bf7-b53c-fd628a327936" Name="Solitario.Avalonia" Language="1033" Version="3.0.2.4" UpgradeCode="ac9457b4-8962-4bf7-b53c-fd625a325931" Manufacturer="Giulio Sorrentino" InstallerVersion="200">
     <SummaryInformation Codepage="Windows-1252" Description="Un semplice solitario per spratichirsi con le carte che riesce sempre" />
     <Media Id="1" Cabinet="Solitario.Avalonia.cab" EmbedCab="yes" />
 

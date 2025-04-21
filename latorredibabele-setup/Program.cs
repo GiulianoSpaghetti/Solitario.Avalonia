@@ -28,7 +28,7 @@ namespace windatefrom_setup
             );
 
             project.GUID = new Guid("AC9457B4-8962-4BF7-B53C-FD625A325931");
-            project.Version = new Version("3.0.2.0");
+            project.Version = new Version("3.0.2.4");
             project.Platform = Platform.x64;
             project.SourceBaseDir = "F:\\source\\Solitario.Avalonia\\Solitario.Desktop\\bin\\Release\\net9.0-windows10.0.26100.0";
             project.LicenceFile = "LICENSE.rtf";

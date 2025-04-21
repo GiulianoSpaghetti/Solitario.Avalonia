@@ -80,7 +80,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
 
@@ -92,7 +92,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("EVuota")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
 
@@ -108,7 +108,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonIntera")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
            return;
         }
         inizio--;
@@ -124,7 +124,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonIntera")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
         fine--;
@@ -136,7 +136,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
         if (fine > 2)
@@ -147,7 +147,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonNelRange")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
         if (inizio == fine)
@@ -158,7 +158,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LeRigheCoincidono")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
         switch (inizio)
@@ -186,7 +186,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
         Carta c1 = null;
@@ -203,7 +203,7 @@ public partial class MainView : UserControl
                 Body = $"{MainWindow.Instance.FindResource("OperazioneNonValida")}"
             };
 
-            MainWindow.notification.ShowNotification(not);
+            MainWindow.Notification.ShowNotification(not);
             return;
         }
         Image img = this.Find<Image>("carta" + (inizio * 10 + a));

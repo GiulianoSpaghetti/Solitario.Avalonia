@@ -9,8 +9,8 @@ namespace Solitario.Views;
 public partial class MainWindow : Window
 {
 
-    public static MainWindow Instance;
-    public static INotificationManager notification;
+    public static MainWindow Instance { get; private set; }
+    public static INotificationManager Notification { get; private set; }
 
     private static INotificationManager CreateManager()
     {
@@ -29,7 +29,8 @@ public partial class MainWindow : Window
     {
         Instance = this;
         InitializeComponent();
-        notification = CreateManager();
-        notification.Initialize();
+        Notification = CreateManager();
+        
+        Notification.Initialize();
     }
 }
