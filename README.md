@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=tV349PgnwrM su debian
 
 ## Come installare
 
-Su pling (https://www.pling.com/p/2303743/)
+[![pling](http://numeronesoft.ddns.net:8080/images/pling.png)](https://www.pling.com/p/2303743/)
 
 Prerequisiti:
 
