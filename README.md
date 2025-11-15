@@ -10,16 +10,16 @@ https://www.youtube.com/watch?v=tV349PgnwrM su debian
 
 [![pling](http://numeronesoft.ddns.net:8080/images/pling.png)](https://www.pling.com/p/2303743/)
 
-Prerequisiti:
+## Prerequisiti:
 
-## Windows
+### Windows
 
 https://winstall.app/apps/Microsoft.DotNet.DesktopRuntime.9
 
 
-## Debian
+### Debian
 
-https://learn.microsoft.com/en-us/linux/packages
+https://learn.microsoft.com/it-it/linux/packages
 
 
 ## L'immagine di sfondo
