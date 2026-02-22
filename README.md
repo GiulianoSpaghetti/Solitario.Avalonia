@@ -8,14 +8,23 @@ https://www.youtube.com/watch?v=tV349PgnwrM su debian
 
 ## Come installare
 
+### Su unix
+
 [![pling](http://numeronesoft.ddns.net:8080/images/pling.png)](https://www.pling.com/p/2303743/)
+
+### Su windows
+
+[![winget](https://user-images.githubusercontent.com/49786146/159123331-729ae9f2-4cf9-439b-8515-16a4ef991089.png)](https://marticliment.com/unigetui/share?name=La+torre+di+babele&id=GiulioSorrentino.Latorredibabele&sourceName=winget&managerName=WinGet)
+
+### Su debian
+
+Può essere trovato sul mio repository all'indirizzo http://numeronesoft.ddns.net:8080
 
 ## Prerequisiti:
 
 ### Windows
 
-https://winstall.app/apps/Microsoft.DotNet.DesktopRuntime.9
-
+https://marticliment.com/unigetui/share?name=Microsoft+.NET+Windows+Desktop+Runtime+10.0&id=Microsoft.DotNet.DesktopRuntime.10&sourceName=winget&managerName=WinGet
 
 ### Debian
 
