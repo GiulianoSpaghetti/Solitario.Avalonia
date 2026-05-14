@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=tV349PgnwrM su debian
 
 ### Su windows
 
-[![winget](https://user-images.githubusercontent.com/49786146/159123331-729ae9f2-4cf9-439b-8515-16a4ef991089.png)](https://marticliment.com/unigetui/share?name=La+torre+di+babele&id=GiulioSorrentino.Latorredibabele&sourceName=winget&managerName=WinGet)
+    unigetui://giuliosorrentino&#46latorreibabele
 
 ### Su debian
 
