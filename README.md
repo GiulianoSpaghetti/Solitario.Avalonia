@@ -24,7 +24,9 @@ Può essere trovato sul mio repository all'indirizzo http://numeronesoft.ddns.ne
 
 ### Windows
 
-https://marticliment.com/unigetui/share?name=Microsoft+.NET+Windows+Desktop+Runtime+10.0&id=Microsoft.DotNet.DesktopRuntime.10&sourceName=winget&managerName=WinGet
+    unigetui://DesktopRuntime
+    
+installare il windows desktopruntime 10
 
 ### Debian
 
