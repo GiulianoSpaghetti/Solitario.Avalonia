@@ -1,3 +1,5 @@
+[![.NET AVALONIA Build](https://github.com/GiulianoSpaghetti/Solitario.Avalonia/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/GiulianoSpaghetti/Solitario.Avalonia/actions/workflows/dotnet-desktop.yml)
+
 ## Solitario.Avalonia
 La torre di babele in avalonia, si risolve spostando le carte su carte più grandi e riesce sempre.
 
