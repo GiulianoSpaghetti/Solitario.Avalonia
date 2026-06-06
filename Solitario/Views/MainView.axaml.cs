@@ -6,20 +6,22 @@ using org.altervista.numerone.framework;
 using DesktopNotifications;
 using DesktopNotifications.FreeDesktop;
 using System.Runtime.InteropServices;
-using Avalonia.Platform.Storage;
+using System.ComponentModel;
 
 namespace Solitario.Views;
 
 public partial class MainView : UserControl
 {
-    private UInt16 i, j, k;
+    UInt16 i, j, k;
     private Carta[] vettore;
     private ulong mosse = 0;
-    private static ILauncher? launcher = null;
-    private static Uri HomePage= new Uri("https://github.com/GiulianoSpaghetti/solitario.avalonia");
+    public static MainView Instance = null;
+   private static Avalonia.Platform.Storage.ILauncher? launcher=null;
+
     public MainView()
     {
         int a = 0, b = 0;
+        Instance = this;
         InitializeComponent();
         vettore = new Carta[30];
         ElaboratoreCarteBriscola e = new ElaboratoreCarteBriscola(true, 9, 1, 9);
@@ -57,16 +59,21 @@ public partial class MainView : UserControl
         carta22.Source = vettore[22].GetImmagine();
         carta22.IsVisible = true;
         i = j = k = 2;
-        ok.Content = MainWindow.Instance.FindResource("Ok");
-        Prompt.Text = MainWindow.Instance.FindResource("SpostaCarta") as string;
-        Prompt1.Text = MainWindow.Instance.FindResource("SuRiga") as string;
-        info.Content = MainWindow.Instance.FindResource("Informazioni");
-        greetingsClose.Content = MainWindow.Instance.FindResource("Annulla");
-        greetingsOk.Content = MainWindow.Instance.FindResource("Ok");
-        condividi.Content = MainWindow.Instance.FindResource("Condividi");
-        InfoApp.Content = MainWindow.Instance.FindResource("Applicazione");
-        lblinfo.Text = MainWindow.Instance.FindResource("info") as string;
-        lblimageinfo.Text = MainWindow.Instance.FindResource("imageinfo") as string;
+    }
+
+    public void Inizializza()
+    {
+        ok.Content = MainWindow.d["Ok"];
+        Prompt.Text = MainWindow.d["SpostaCarta"] as string;
+        Prompt1.Text = MainWindow.d["SuRiga"] as string;
+        info.Content = MainWindow.d["Informazioni"];
+        greetingsClose.Content = MainWindow.d["Annulla"];
+        greetingsOk.Content = MainWindow.d["Ok"];
+        condividi.Content = MainWindow.d["Condividi"];
+        InfoApp.Content = MainWindow.d["Applicazione"];
+        lblinfo.Text = MainWindow.d["info"] as string;
+        lblimageinfo.Text = MainWindow.d["imageinfo"] as string;
+
     }
 
     private void OnOk_Click(object sender, RoutedEventArgs e)
@@ -76,11 +83,11 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiInizio"]} {MainWindow.d["EVuota"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
 
@@ -88,11 +95,11 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("EVuota")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiFine"]} {MainWindow.d["EVuota"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
 
@@ -104,11 +111,11 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonIntera")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiInizio"]} {MainWindow.d["NonIntera"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
            return;
         }
         inizio--;
@@ -120,11 +127,11 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonIntera")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiFine"]} {MainWindow.d["NonIntera"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         fine--;
@@ -132,33 +139,33 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("NonNelRange")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiInizio"]} {MainWindow.d["NonNelRange"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         if (fine > 2)
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiFine")} {MainWindow.Instance.FindResource("NonNelRange")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiFine"]} {MainWindow.d["NonNelRange"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         if (inizio == fine)
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LeRigheCoincidono")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LeRigheCoincidono"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         switch (inizio)
@@ -182,11 +189,11 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("LaRiga")} {MainWindow.Instance.FindResource("DiInizio")} {MainWindow.Instance.FindResource("EVuota")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["LaRiga"]} {MainWindow.d["DiInizio"]} {MainWindow.d["EVuota"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         Carta c1 = null;
@@ -199,11 +206,11 @@ public partial class MainView : UserControl
         {
             Notification not = new Notification
             {
-                Title = $"{MainWindow.Instance.FindResource("Errore")}",
-                Body = $"{MainWindow.Instance.FindResource("OperazioneNonValida")}"
+                Title = $"{MainWindow.d["Errore"]}",
+                Body = $"{MainWindow.d["OperazioneNonValida"]}"
             };
 
-            MainWindow.Notification.ShowNotification(not);
+            MainWindow.notification.ShowNotification(not);
             return;
         }
         Image img = this.Find<Image>("carta" + (inizio * 10 + a));
@@ -243,7 +250,7 @@ public partial class MainView : UserControl
             {
                 Applicazione.IsVisible = false;
                 greeting.IsVisible = true;
-                msgfine.Text = $"{MainWindow.Instance.FindResource("SolitarioFinito")} {mosse} {MainWindow.Instance.FindResource("VuoiFareNuovaPartita")}";
+                msgfine.Text = $"{MainWindow.d["SolitarioFinito"]} {mosse} {MainWindow.d["VuoiFareNuovaPartita"]}";
                 condividi.IsEnabled = true;
             }
         }
@@ -312,18 +319,21 @@ public partial class MainView : UserControl
     }
     private void OnSito_Click(object sender, RoutedEventArgs e)
     {
-        if (launcher == null)
+        var psi = new ProcessStartInfo
         {
-            launcher = TopLevel.GetTopLevel(this).Launcher;
-        }
-        launcher.LaunchUriAsync(HomePage);
+            FileName = "https://github.com/numerunix/solitario.avalonia",
+            UseShellExecute = true
+        };
+        Process.Start(psi);
     }
     private void greetingsShare_Click(object sender, RoutedEventArgs e)
     {
-        if (launcher == null)
-        {
-            launcher = TopLevel.GetTopLevel(this).Launcher;
-        }
-        launcher.LaunchUriAsync(new Uri($"https://twitter.com/intent/tweet?text=Ho%20completato%20la%20torre%20di%babele%20in%20avalonia%20di%20numerone%20in%20{mosse}%20mosse&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fsolitario.Avalonia"));
+         if (launcher==null)
+            launcher = TopLevel.GetTopLevel( (Avalonia.Visual) sender).Launcher;
+
+        launcher.LaunchUriAsync(new Uri($"https://twitter.com/intent/tweet?text=Ho%20completato%20la%20torre%20di%20babele%20in%20avalonia%20di%20numerone%20in%20{mosse}%20mosse&url=https%3A%2F%2Fgithub.com%2Fnumerunix%2Fsolitario.Avalonia"));
+        condividi.IsEnabled = false;
     }
+
+
 }

@@ -8,9 +8,9 @@
         x:Class="Solitario.Views.MainWindow"
         Icon="/Assets/icon.jpg"
         Title="Solitario"
-        WindowState="Maximized">
+	WindowState="FullScreen">
 	<Window.Resources>
-		<ResourceDictionary>
+		<ResourceDictionary x:Key="it">
 			<x:String x:Key="Ok">Ok</x:String>
 			<x:String x:Key="SpostaCarta">Sposta l'ultima carta della riga</x:String>
 			<x:String x:Key="SuRiga">sull'ultima carta della riga</x:String>
@@ -29,9 +29,78 @@
 			<x:String x:Key="OperazioneNonValida">Operazione non valida</x:String>
 			<x:String x:Key="SolitarioFinito">Il solitario è finito, lo hai completato in</x:String>
 			<x:String x:Key="VuoiFareNuovaPartita">mosse. Vuoi effettuare una nuova partita?</x:String>
-			<x:String x:Key="info">La torre di Babele: solitario che permette di spostare le carte solo sulle carte più grandi</x:String>
+			<x:String x:Key="info">La torre di Babele: solitario che permette di spostare le carte solo sulle carte di peso maggiore</x:String>
 			<x:String x:Key="imageinfo">L'immagine di sfondo é fatta da Giulio Sorrentino alla riserva naturale degli astroni del WWF. E' sotto licenza creative commons sharealike 4.0 international.</x:String>
 			<x:String x:Key="Errore">Errore</x:String>
+		</ResourceDictionary>
+		<ResourceDictionary x:Key="es">
+			<x:String x:Key="Ok">Aceptar</x:String>
+			<x:String x:Key="SpostaCarta">Mover la última naipe de la fila</x:String>
+			<x:String x:Key="SuRiga">en la última naipe de la fila</x:String>
+			<x:String x:Key="Informazioni">Información</x:String>
+			<x:String x:Key="Annulla">Cancelar</x:String>
+			<x:String x:Key="Condividi">Compartir</x:String>
+			<x:String x:Key="Applicazione">Aplicación</x:String>
+			<x:String x:Key="LaRiga">La fila de</x:String>
+			<x:String x:Key="DiInizio">comenzar</x:String>
+			<x:String x:Key="DiFine">fin</x:String>
+			<x:String x:Key="NonValida">no es válido</x:String>
+			<x:String x:Key="EVuota">está vacío</x:String>
+			<x:String x:Key="NonIntera">no es un número entero</x:String>
+			<x:String x:Key="NonNelRange">no está en el rango establecido</x:String>
+			<x:String x:Key="LeRigheCoincidono">Las dos líneas coinciden</x:String>
+			<x:String x:Key="OperazioneNonValidaa">Operación no válida</x:String>
+			<x:String x:Key="SolitarioFinito">El solitario está terminado, lo completaste en</x:String>
+			<x:String x:Key="VuoiFareNuovaPartita">movimientos. ¿Quieres crear un juego nuevo?</x:String>
+			<x:String x:Key="info">La Torre de Babel: solitario que te permite mover naipes sólo a las naipes de mayor peso</x:String>
+			<x:String x:Key="imageinfo">La imagen de fondo fue tomada por Giulio Sorrentino en la reserva natural WWF Astroni. Tiene licencia creative commons sharealike 4.0 internacional.</x:String>
+			<x:String x:Key="Errore">Error</x:String>
+		</ResourceDictionary>
+		<ResourceDictionary x:Key="en">
+			<x:String x:Key="Ok">Ok</x:String>
+			<x:String x:Key="SpostaCarta">Move the last card in the row</x:String>
+			<x:String x:Key="SuRiga">on the last card of the row</x:String>
+			<x:String x:Key="Informazioni">Information</x:String>
+			<x:String x:Key="Annulla">Cancel</x:String>
+			<x:String x:Key="Condividi">Share</x:String>
+			<x:String x:Key="Applicazione">Application</x:String>
+			<x:String x:Key="LaRiga">The row of</x:String>
+			<x:String x:Key="DiInizio">begin</x:String>
+			<x:String x:Key="DiFine">end</x:String>
+			<x:String x:Key="NonValida">is not valid</x:String>
+			<x:String x:Key="EVuota">is empty</x:String>
+			<x:String x:Key="NonIntera">is not integer</x:String>
+			<x:String x:Key="NonNelRange">is not in the established range</x:String>
+			<x:String x:Key="LeRigheCoincidono">The two lines coincide</x:String>
+			<x:String x:Key="OperazioneNonValidaan">Invalid Operation</x:String>
+			<x:String x:Key="SolitarioFinito">Solitaire is finished, you completed it in</x:String>
+			<x:String x:Key="VuoiFareNuovaPartita">moves. Do you want to make a new game?</x:String>
+			<x:String x:Key="info">The Tower of Babel: solitaire that allows you to move cards only to the heavier weight cards</x:String>
+			<x:String x:Key="imageinfo">The background image was taken by Giulio Sorrentino at the WWF Astroni nature reserve. It is licensed under creative commons sharealike 4.0 international.</x:String>
+			<x:String x:Key="Errore">Error</x:String>
+		</ResourceDictionary>
+		<ResourceDictionary x:Key="fr">
+			<x:String x:Key="Ok">D'accord</x:String>
+			<x:String x:Key="SpostaCarta">Déplacer la dernière carte de la ligne</x:String>
+			<x:String x:Key="SuRiga">sur la dernière carte de la ligne</x:String>
+			<x:String x:Key="Informazioni">Informations</x:String>
+			<x:String x:Key="Annulla">Annuler</x:String>
+			<x:String x:Key="Condividi">Partager</x:String>
+			<x:String x:Key="Applicazione">Application</x:String>
+			<x:String x:Key="LaRiga">La rangée de</x:String>
+			<x:String x:Key="DiInizio">commencer</x:String>
+			<x:String x:Key="DiFine">fin</x:String>
+			<x:String x:Key="NonValida">n'est pas valide</x:String>
+			<x:String x:Key="EVuota">est vide</x:String>
+			<x:String x:Key="NonIntera">n'est pas un entier</x:String>
+			<x:String x:Key="NonNelRange">n'est pas dans la plage établie</x:String>
+			<x:String x:Key="LeRigheCoincidono">Les deux lignes coïncident</x:String>
+			<x:String x:Key="OperazioneNonValidaane">Opération invalide</x:String>
+			<x:String x:Key="SolitarioFinito">Le solitaire est terminé, vous l'avez terminé en</x:String>
+			<x:String x:Key="VuoiFareNuovaPartita">déplacements. Voulez-vous créer un nouveau jeu ?</x:String>
+			<x:String x:Key="info">La Tour de Babel : solitaire qui permet de déplacer les cartes uniquement vers les plus lourdes cartes</x:String>
+			<x:String x:Key="imageinfo">L'image d'arrière-plan a été prise par Giulio Sorrentino dans la réserve naturelle WWF Astroni. Il est sous licence Creative Commons Sharealike 4.0 International.</x:String>
+			<x:String x:Key="Errore">Erreur</x:String>
 		</ResourceDictionary>
 	</Window.Resources>
         <views:MainView />
