@@ -13,11 +13,16 @@
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Themes.Fluent" />
     <PackageReference Include="Avalonia.Fonts.Inter" />
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" />
     <PackageReference Include="CardFramework.avalonia" />
     <PackageReference Include="DesktopNotifications" />
     <PackageReference Include="DesktopNotifications.Apple" />
     <PackageReference Include="DesktopNotifications.FreeDesktop" />
     <PackageReference Include="DesktopNotifications.Windows" />
+    <PackageReference Include="MicroCom.Runtime" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" />
     <PackageReference Include="ReactiveUI.Avalonia" />
     <PackageReference Include="Splat" />
     <PackageReference Include="Tmds.DBus" />
